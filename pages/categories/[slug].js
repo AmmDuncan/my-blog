@@ -9,7 +9,7 @@ import { HorizontalCard } from "../../components/Recent/Recent";
 
 import styles from "../../components/Recent/Recent.module.scss";
 
-export default function SingleCategory({ posts, categories }) {
+export default function SingleCategory({ posts, category, categories }) {
   const router = useRouter();
 
   console.log(posts)
