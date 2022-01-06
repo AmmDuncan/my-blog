@@ -12,7 +12,6 @@ import styles from "../../components/Recent/Recent.module.scss";
 export default function SingleCategory({ posts, category, categories }) {
   const router = useRouter();
 
-  console.log(posts)
   if(!posts) return null
 
   return (

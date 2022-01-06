@@ -27,11 +27,10 @@ class MyApp extends App {
   constructor(props) {
     super(props);
     Router.onRouteChangeStart = (url) => {
-      if (url !== window.location.pathname)
-        setTimeout(() => this.setState(oldState => ({ loading: true })), 300);
+      if (url !== window.location.pathname) this.setState(() => ({loading: true}));
     };
-    Router.onRouteChangeComplete = (url) => {
-      this.setState(oldState => ({ loading: false }));
+    Router.onRouteChangeComplete = () => {
+      this.setState(() => ({ loading: false }));
     };
   }
 
