@@ -1,6 +1,7 @@
 import Prism from "prismjs";
 import Image from "next/image";
 import Head from "next/head";
+import Script from "next/script";
 import classnames from "classnames";
 import { useRouter } from "next/router";
 import { format } from "date-fns";
@@ -93,8 +94,8 @@ export default function SinglePost({ post }) {
           </div>
         </main>
       </main>
-      <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
+      <Script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js" />
+      <Script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js" />
     </>
   );
 }
