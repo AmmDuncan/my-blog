@@ -81,7 +81,7 @@ export default function SinglePost({ post }) {
                 </div>
               </div>
               <div className={styles["image"]}>
-                <Image src={post.feature_image} layout={"fill"} alt="" />
+                <Image src={post.feature_image} layout={"fill"} alt="" priority />
                 <span className={styles["primary_tag"]}
                       onClick={() => router.push(`/categories/${post?.primary_tag.slug}`)}>{post?.primary_tag.name}</span>
               </div>
