@@ -17,7 +17,7 @@ export default function Home({ featured, posts, categories }) {
         <meta property="og:title" content="Browse Posts | Ammiel Yawson" />
         <meta property="og:description" content="Welcome to my space. An open look into insights from my journey." />
         <meta property="og:image"
-              content="https://github.com/AmmDuncan/my-blog/blob/main/public/assets/images/home-image.png" />
+              content="https://blog.ammielyawson.com/assets/images/home-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="blog.ammielyawson.com" />
@@ -25,7 +25,7 @@ export default function Home({ featured, posts, categories }) {
         <meta name="twitter:title" content="Browse Posts | Ammiel Yawson" />
         <meta name="twitter:description" content="Welcome to my space. An open look into insights from my journey." />
         <meta name="twitter:image"
-              content="https://github.com/AmmDuncan/my-blog/blob/main/public/assets/images/home-image.png" />
+              content="https://blog.ammielyawson.com/assets/images/home-image.png" />
 
         <title>Browse Posts | Ammiel Yawson</title>
       </Head>
