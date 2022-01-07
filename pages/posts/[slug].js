@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 import { format } from "date-fns";
 import { useEffect } from "react";
 
-import Navbar from "../../components/Navbar/Navbar";
 import { getPost, getPosts } from "../../api";
 
 import styles from "./SinglePost.module.scss";
@@ -23,7 +22,7 @@ export default function SinglePost({ post }) {
   const query = new URLSearchParams();
   query.append("url", current_url);
 
-  if (!post) return <Navbar />;
+  if (!post) return <div className="fill-page" />;
 
   return (
     <>
@@ -42,7 +41,6 @@ export default function SinglePost({ post }) {
         <meta name="twitter:description" content={post.twitter_description || post.meta_description} />
         <meta name="twitter:image" content={post.twitter_image || post.og_image} />
       </Head>
-      <Navbar />
       <main>
         <header className={classnames(styles["header"], styles["post"], styles["dark"])}>
           <div className="container">

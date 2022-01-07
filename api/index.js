@@ -6,6 +6,6 @@ const api = new GhostContentAPI({
   version: "v4"
 });
 
-export const getPosts = (options = { include: "tags" }) => api.posts.browse({ ...options, include: "tags,authors" });
+export const getPosts = (options = {}) => api.posts.browse({ ...options, include: "tags,authors" });
 export const getPost = (options = {}) => api.posts.read(options);
 export const getTags = (options = { include: "posts" }) => api.tags.browse({ ...options });

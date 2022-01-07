@@ -13,9 +13,7 @@ import Image from "next/image";
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
 import Loader from "../components/Loader/Loader";
-import { getPostsWithTags } from "../api/axios";
-
-let post = [];
+import Footer from "../components/Footer/Footer";
 
 export const AllPosts = createContext([]);
 
@@ -26,7 +24,7 @@ class MyApp extends App {
   };
 
   constructor(props) {
-    super(props);
+    super();
     Router.onRouteChangeStart = (url) => {
       if (url !== window.location.pathname) this.setState(() => ({ loading: true }));
     };
@@ -36,26 +34,26 @@ class MyApp extends App {
   }
 
   componentDidMount() {
-    getPostsWithTags().then(
-      posts => this.setState({ posts })
-    );
+    fetch("/api/posts")
+      .then(res => res.json())
+      .then(
+        posts => this.setState({ posts })
+      );
   }
 
   render() {
     const { Component, pageProps } = this.props;
     if (this.state.loading) {
+      window.scrollTo(0, 0);
       return <div>
         <Navbar />
-        <div>
+        <div className="fill-page">
           <div
             style={{
-              position: "fixed",
-              width: "100vw",
-              height: "140vh",
               display: "grid",
               grid: "auto-flow max-content / 15rem",
               placeContent: "center",
-              transform: "scale(0.7) translateY(-24rem) translateX(-2rem)"
+              transform: "scale(0.7)"
             }}>
             <Image width={80} height={150} src="/assets/images/soft-meme.gif" alt="" />
             <Loader style={{
@@ -63,6 +61,7 @@ class MyApp extends App {
             }} />
           </div>
         </div>
+        <Footer />
       </div>;
     }
     return <AllPosts.Provider value={this.state.posts}>
@@ -72,7 +71,9 @@ class MyApp extends App {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
+      <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </AllPosts.Provider>;
   }
 }

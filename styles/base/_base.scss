@@ -165,11 +165,11 @@ pre[class*="language-"] {
 .fill-page {
   display: grid;
   place-content: center;
-  position: fixed;
+  position: relative;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 6.4rem);
 
-  & > *, .loading-card {
+  .card {
     position: relative;
     background: white;
     padding: 4rem 6.4rem;

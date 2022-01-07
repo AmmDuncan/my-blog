@@ -3,11 +3,14 @@ import Navbar from "../components/Navbar/Navbar";
 import Featured from "../components/Featured/Featured";
 import Recent from "../components/Recent/Recent";
 import {getPosts, getTags} from "../api";
+import Head from "next/head";
 
 export default function Home({featured, posts, categories}) {
   return (
     <>
-      <Navbar/>
+      <Head>
+        <title>Browse Posts | Ammiel Yawson</title>
+      </Head>
       <Header/>
       <main>
         <div className="container">
