@@ -17,7 +17,22 @@ export default function SingleCategory({ posts, category, categories, meta }) {
   return (
     <>
       <Head>
-        <title>All Categories | Ammiel Yawson</title>
+        <meta name="description" content="Welcome to my space. An open look into insights from my journey." />
+
+        <meta property="og:url" content="https://blog.ammielyawson.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="All Categories | Ammiel Yawson" />
+        <meta property="og:description" content="Welcome to my space. An open look into insights from my journey." />
+        <meta property="og:image"
+              content="https://blog.ammielyawson.com/assets/images/home-image.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="blog.ammielyawson.com" />
+        <meta property="twitter:url" content="https://blog.ammielyawson.com/" />
+        <meta name="twitter:title" content="All Categories | Ammiel Yawson" />
+        <meta name="twitter:description" content="Welcome to my space. An open look into insights from my journey." />
+        <meta name="twitter:image"
+              content="https://blog.ammielyawson.com/assets/images/home-image.png" />
         <title>All Categories | Ammiel Yawson</title>
       </Head>
       <div className={classnames("container")}>

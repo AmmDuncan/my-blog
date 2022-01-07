@@ -8,7 +8,6 @@ export default function Home({ featured, posts, categories }) {
   return (
     <>
       <Head>
-
         <title>Browse Posts | Ammiel Yawson</title>
         <meta name="description" content="Welcome to my space. An open look into insights from my journey." />
 

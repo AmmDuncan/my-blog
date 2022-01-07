@@ -31,8 +31,8 @@ export default function SinglePost({ post }) {
         <meta name="description" content={post.meta_description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={current_url} />
-        <meta property="og:title" content={post.og_title} />
-        <meta property="og:description" content={post.meta_description} />
+        <meta property="og:title" content={post.og_title || post.title} />
+        <meta property="og:description" content={post.og_description || post.meta_description} />
         <meta property="og:image" content={post.og_image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="ammielyawson.com" />
