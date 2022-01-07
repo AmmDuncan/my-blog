@@ -45,11 +45,7 @@ export default function Home({ featured, posts, categories }) {
   );
 }
 
-export async function getStaticProps(
-  {
-    params;
-  }
-) {
+export async function getStaticProps() {
   const localPosts = await getPosts();
   const featured = localPosts.filter(post => post.featured);
   const categories = await getTags();
