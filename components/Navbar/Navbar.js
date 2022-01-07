@@ -58,7 +58,7 @@ const Navbar = () => {
         <ul>
           <li><Link href="/">Browse</Link></li>
           {/*<li><Link href="#">Categories</Link></li>*/}
-          <li><Link href="#">Portfolio</Link></li>
+          <li><Link href="https://ammielyawson.com/projects.html">Portfolio</Link></li>
         </ul>
 
         {/* SEARCH */}
@@ -187,7 +187,7 @@ const Navbar = () => {
         <ul onClick={() => setTimeout(() => setOpen(false), 200)}>
           <li><Link href="/">Browse</Link></li>
           {/*<li><Link href="#">Categories</Link></li>*/}
-          <li><Link href="#">Portfolio</Link></li>
+          <li><Link href="https://ammielyawson.com/projects.html">Portfolio</Link></li>
         </ul>
         <div className={styles.image}>
           <Image layout="fill" src="/assets/images/mounts.png" alt="" />
