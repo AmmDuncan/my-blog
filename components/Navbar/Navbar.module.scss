@@ -313,5 +313,10 @@
     position: absolute;
     height: 14rem;
     bottom: 0;
+
+    img {
+      object-fit: cover;
+      object-position: center top;
+    }
   }
 }

@@ -68,7 +68,7 @@ const Navbar = () => {
             router.push(`posts?search=${search}`, { shallow: true });
             setSearch("");
           }} />
-          <button
+          <button aria-label="Search Button"
             onClick={() => {
               if (search) {
                 setSearch("");
@@ -147,7 +147,7 @@ const Navbar = () => {
             router.push(`posts?search=${search}`, { shallow: true });
             setSearch("");
           }} />
-          <button>
+          <button aria-label="Search Button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={16}
