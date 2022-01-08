@@ -47,7 +47,7 @@
     line-height: 1.6;
     color: rgba($color-primary-100, 0.7);
     border-top: 1px solid rgba($color-primary-100, 0.2);
-    @media (min-width: 60px) {
+    @media (min-width: 600px) {
       border-top: none;
     }
   }
