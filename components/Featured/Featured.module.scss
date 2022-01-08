@@ -69,7 +69,7 @@
 
       .date {
         font-size: 1.4rem;
-        color: rgba(255, 255, 255, .6);
+        color: rgba($color-primary-100, 0.8);
       }
     }
 
@@ -152,6 +152,7 @@
       text-overflow: ellipsis;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      color: $color-grey-800;
 
       @media screen and (min-width: 576px) {
         -webkit-line-clamp: 2;
@@ -159,7 +160,7 @@
     }
 
     .date {
-      color: rgba($color-grey, .5);
+      color: rgba($color-grey, .7);
       font-size: 1.4rem;
     }
 
