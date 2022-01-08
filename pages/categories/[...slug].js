@@ -65,7 +65,7 @@ export default function SingleCategory({ posts, category, categories, meta }) {
                 </button>
 
                 <div className="info">
-                  Page <strong>{meta.pagination.page}</strong> of <strong>{meta.pagination.pages}</strong>
+                  Page <strong>{meta.pagination.page} of {meta.pagination.pages}</strong>
                 </div>
 
                 <button className="page-btn" disabled={lastPage} onClick={() => {
