@@ -56,7 +56,7 @@ export default function SingleCategory({ posts, category, categories, meta }) {
                 <button className="page-btn" disabled={firstPage} onClick={() => {
                   if (!firstPage) router.push(`/${category.slug}/${meta.pagination.page - 1}`);
                 }}>
-                  <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M43.0624 10.3188L19.2624 30.8439C18.5812 31.4314 18.5812 32.5627 19.2624 33.1564L43.0624 53.6815C43.9499 54.444 45.2499 53.7565 45.2499 52.5253V11.475C45.2499 10.2438 43.9499 9.55629 43.0624 10.3188Z"
                       fill="#5222D0" />
@@ -72,7 +72,7 @@ export default function SingleCategory({ posts, category, categories, meta }) {
                   if (!lastPage) router.push(`/${category.slug}/${meta.pagination.page + 1}`);
                 }}>
                   Next
-                  <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M20.9376 10.3188L44.7376 30.8439C45.4188 31.4314 45.4188 32.5627 44.7376 33.1564L20.9376 53.6815C20.0501 54.444 18.7501 53.7565 18.7501 52.5253V11.475C18.7501 10.2438 20.0501 9.55629 20.9376 10.3188Z"
                       fill="#5222D0" />
