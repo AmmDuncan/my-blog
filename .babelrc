@@ -2,7 +2,7 @@
   "presets": ["next/babel"],
   "plugins": [
     ["prismjs", {
-      "languages": ["scss", "css", "javascript","markup", "jsx"],
+      "languages": ["scss", "css", "javascript","markup", "jsx", "html"],
       "plugins": ["autoloader"]
     }]
   ]

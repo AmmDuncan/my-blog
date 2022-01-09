@@ -228,6 +228,10 @@ pre[class*="language-"] {
   .token.property {
     color: white;
   }
+
+  .token.string {
+    color: #FCE566 !important;
+  }
 }
 
 .token.comment,
