@@ -1,5 +1,3 @@
-import "prismjs/plugins/autoloader/prism-autoloader.min";
-
 import "../styles/main.scss";
 import "@fontsource/dm-serif-text/400.css";
 import "@fontsource/inter/300.css";

@@ -15,6 +15,7 @@ export default function SinglePost({ post }) {
   const router = useRouter();
 
   useEffect(() => {
+    window.p = Prism
     Prism.highlightAll();
   }, []);
 
