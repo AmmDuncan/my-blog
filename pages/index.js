@@ -46,7 +46,7 @@ export default function Home({ featured, posts, categories }) {
 
 export async function getStaticProps() {
   const localPosts = await getPosts();
-  const featured = localPosts.filter(post => post.featured);
+  const featured = localPosts.filter(post => post.featured).slice(0, 3);
   const categories = await getTags();
   return {
     props: {
