@@ -15,8 +15,7 @@ export default function SinglePost({ post }) {
   const router = useRouter();
 
   useEffect(() => {
-    window.p = Prism
-    Prism.highlightAll();
+    setTimeout(() => Prism.highlightAll(), 0)
   }, []);
 
   const current_url = process.env.NEXT_PUBLIC_BASE_URL + router.asPath;
@@ -93,8 +92,8 @@ export default function SinglePost({ post }) {
           </div>
         </main>
       </main>
-      <Script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js" />
-      <Script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js" />
+      {/*<Script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js" />*/}
+      {/*<Script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js" />*/}
     </>
   );
 }

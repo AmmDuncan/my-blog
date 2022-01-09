@@ -209,10 +209,8 @@ pre[class*="language-"] {
   border-radius: .3em;
 }
 
-.language-sass, .language-css {
-  .token.property-line{
-    color: #948AE3;
-  }
+.language-scss, .language-css {
+  color: #948AE3 !important;
 
   .token.punctuation {
     color: #8B888F;
@@ -259,8 +257,9 @@ pre[class*="language-"] {
 .token.number {
   color: #948AE3;
 }
+
 .token.attr-name,
-.token.function{
+.token.function {
   color: #5AD4E6;
 }
 
@@ -300,6 +299,7 @@ pre[class*="language-"] {
 .token.bold {
   font-weight: bold;
 }
+
 .token.italic {
   font-style: italic;
 }
@@ -346,6 +346,7 @@ pre[class*="language-"] {
   .message {
     margin: 2.4rem 0 3.2rem;
     text-align: center;
+
     p {
       color: rgba($color-grey-300, .7);
     }
@@ -364,9 +365,11 @@ pre[class*="language-"] {
   color: white;
   transition: transform 200ms ease-out;
   cursor: pointer;
+
   &:hover {
     transform: scale(1.03);
   }
+
   &:active {
     transform: scale(0.997);
   }
