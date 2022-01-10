@@ -8,12 +8,11 @@ export default function Home({ featured, posts, categories }) {
   return (
     <>
       <Head>
-        <title>Browse Posts | Ammiel Yawson</title>
         <meta name="description" content="Welcome to my space. An open look into insights from my journey." />
 
         <meta property="og:url" content="https://blog.ammielyawson.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Browse Posts | Ammiel Yawson" />
+        <meta property="og:title" content="Insights from a web developer's journey | Ammiel Yawson" />
         <meta property="og:description" content="Welcome to my space. An open look into insights from my journey." />
         <meta property="og:image"
               content="https://blog.ammielyawson.com/assets/images/home-image.png" />
@@ -21,12 +20,12 @@ export default function Home({ featured, posts, categories }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="blog.ammielyawson.com" />
         <meta property="twitter:url" content="https://blog.ammielyawson.com/" />
-        <meta name="twitter:title" content="Browse Posts | Ammiel Yawson" />
+        <meta name="twitter:title" content="Insights from a web developer's journey | Ammiel Yawson" />
         <meta name="twitter:description" content="Welcome to my space. An open look into insights from my journey." />
         <meta name="twitter:image"
               content="https://blog.ammielyawson.com/assets/images/home-image.png" />
 
-        <title>Browse Posts | Ammiel Yawson</title>
+        <title>Insights from a web developer&apos;s journey | Ammiel Yawson</title>
       </Head>
       <Header />
       <main>
