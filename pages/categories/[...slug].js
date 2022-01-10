@@ -38,7 +38,7 @@ export default function SingleCategory({ posts, category, categories, meta }) {
       <div className={classnames("container")}>
         <section className={classnames("section", styles.latest)}>
           <div className={styles["recent"]}>
-            <h2>Posts under &quot;<span className={styles["primary"]}>{category.name}</span>&quot;</h2>
+            <h2>Category: <span className={styles["primary"]}>{category.name}</span></h2>
             <div className={styles["collection"]}>
               {posts.map(post => {
                 const { uuid, feature_image, slug, title, created_at, excerpt, primary_tag } = post;
