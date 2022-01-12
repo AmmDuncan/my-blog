@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { getPosts, getTags } from "../../api";
 import classnames from "classnames";
-import { formatDistanceToNow } from "date-fns";
+import { format, formatDistanceToNow } from "date-fns";
 import { HorizontalCard } from "../../components/Recent/Recent";
 
 import styles from "../../components/Recent/Recent.module.scss";
@@ -49,7 +49,8 @@ export default function SingleCategory({ posts, category, categories, meta }) {
                 const resPosts = {
                   title,
                   image: feature_image,
-                  date: `${formatDistanceToNow(new Date(created_at))} ago`,
+                  // date: `${formatDistanceToNow(new Date(created_at))} ago`,
+                  date: format(new Date(post.created_at), "dd MMMM yyyy"),
                   body: excerpt,
                   tag: primary_tag.name
                 };
