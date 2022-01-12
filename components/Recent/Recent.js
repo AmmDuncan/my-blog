@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import styles from "./Recent.module.scss";
 import { useRouter } from "next/router";
-import { formatDistanceToNow } from "date-fns";
+import { format, formatDistanceToNow } from "date-fns";
 
 export const HorizontalCard = ({ title, date, tag, image, body, clicked }) => {
   return <article className={styles["card"]} onClick={clicked}>
@@ -38,7 +38,8 @@ const Recent = ({ posts, categories = [] }) => {
             const resPosts = {
               title,
               image: feature_image,
-              date: `${formatDistanceToNow(new Date(created_at))} ago`,
+              // date: `${formatDistanceToNow(new Date(created_at))} ago`,
+              date: format(new Date(post.created_at), "dd MMMM yyyy"),
               body: excerpt,
               tag: primary_tag.name
             };
