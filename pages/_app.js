@@ -51,7 +51,7 @@ class MyApp extends App {
               display: "grid",
               grid: "auto-flow max-content / 15rem",
               placeContent: "center",
-              transform: "scale(0.7)"
+              transform: "scale(0.7) translateX(-2rem)"
             }}>
             <Image width={80} height={150} src="/assets/images/soft-meme.gif" alt="" />
             <Loader style={{
