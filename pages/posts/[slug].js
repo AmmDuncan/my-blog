@@ -32,14 +32,14 @@ export default function SinglePost({ post }) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={current_url} />
         <meta property="og:title" content={post.og_title || post.title} />
-        <meta property="og:description" content={post.og_description || post.meta_description} />
-        <meta property="og:image" content={post.og_image} />
+        <meta property="og:description" content={post.og_description || post.meta_description || post.excerpt} />
+        <meta property="og:image" content={post.og_image || post.feature_image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="ammielyawson.com" />
         <meta property="twitter:url" content={current_url} />
         <meta name="twitter:title" content={post.twitter_title || post.meta_title} />
-        <meta name="twitter:description" content={post.twitter_description || post.meta_description} />
-        <meta name="twitter:image" content={post.twitter_image || post.og_image} />
+        <meta name="twitter:description" content={post.twitter_description || post.meta_description || post.excerpt} />
+        <meta name="twitter:image" content={post.twitter_image || post.og_image || post.feature_image} />
       </Head>
       <main>
         <header className={classnames(styles["header"], styles["post"], styles["dark"])}>
