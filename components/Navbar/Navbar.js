@@ -29,11 +29,11 @@ const Navbar = () => {
       setPosts(allPosts ? allPosts.filter(pp => searchIn(pp, "title", search)
         || searchIn(pp, "html", search)
         || searchIn(pp, "excerpt", search)
-        || searchIn(pp, "tags", search)).slice(0, 4) : posts);
+        || searchIn(pp, "tags", search)).slice(0, 4) : null);
       window.p = allPosts;
     }
     setLoading(false);
-  }, [search]);
+  }, [search, postsContext]);
 
   return (
     <nav className={styles.navbar}>
