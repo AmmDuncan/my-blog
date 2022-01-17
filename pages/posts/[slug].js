@@ -1,7 +1,6 @@
 import Prism from "prismjs";
 import Image from "next/image";
 import Head from "next/head";
-import Script from "next/script";
 import classnames from "classnames";
 import { useRouter } from "next/router";
 import { format } from "date-fns";
