@@ -48,7 +48,7 @@ export default function SinglePost({ post }) {
               <div className={styles["summary"]}>
                 <div className={styles["author"]}>By {post.primary_author.name}</div>
                 <div className={styles["date-and-time"]}><span
-                  className={styles["date"]}>{format(new Date(post.created_at), "dd MMMM yyyy")}</span><span
+                  className={styles["date"]}>{format(new Date(post.published_at), "dd MMMM yyyy")}</span><span
                   className={styles["middot"]}>&middot;</span><span
                   className="time">{post.reading_time} min{post.reading_time > 1 ? "s" : null} read</span>
                 </div>

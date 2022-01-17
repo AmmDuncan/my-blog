@@ -70,17 +70,17 @@ const Featured = ({featured}) => {
                 <div className={styles.tag}>{featured[0].primary_tag.name}</div>
               </div>
               <p className={styles.title}>{featured[0].title}</p>
-              <p className={styles.date}>{formatDistanceToNow(new Date(featured[0].created_at))} ago</p>
+              <p className={styles.date}>{formatDistanceToNow(new Date(featured[0].published_at))} ago</p>
             </div>
           </>
         </div>
         <div className={styles["cards"]}>
           {featured.map((post, i) => {
-            const {uuid, feature_image, title, created_at, slug} = post
+            const {uuid, feature_image, title, published_at, slug} = post
             const derrivedPost = {
               title,
               image: feature_image,
-              date:`${formatDistanceToNow(new Date(created_at))} ago`,
+              date:`${formatDistanceToNow(new Date(published_at))} ago`,
               slug,
               active: i === 0
             }

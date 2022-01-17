@@ -45,12 +45,12 @@ export default function SingleCategory({ posts, category, categories, meta }) {
             </h2>
             <div className={styles["collection"]}>
               {posts.map(post => {
-                const { uuid, feature_image, slug, title, created_at, excerpt, primary_tag } = post;
+                const { uuid, feature_image, slug, title, published_at, excerpt, primary_tag } = post;
                 const resPosts = {
                   title,
                   image: feature_image,
                   // date: `${formatDistanceToNow(new Date(created_at))} ago`,
-                  date: format(new Date(post.created_at), "dd MMMM yyyy"),
+                  date: format(new Date(published_at), "dd MMMM yyyy"),
                   body: excerpt,
                   tag: primary_tag.name
                 };
