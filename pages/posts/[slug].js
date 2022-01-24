@@ -26,11 +26,11 @@ export default function SinglePost({ post }) {
   return (
     <>
       <Head>
-        <title>{post.title} | Ammiel Yawson</title>
+        <title>{post.meta_title} | Ammiel Yawson</title>
         <meta name="description" content={post.meta_description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={current_url} />
-        <meta property="og:title" content={post.og_title || post.title} />
+        <meta property="og:title" content={post.og_title || post.meta_title} />
         <meta property="og:description" content={post.og_description || post.meta_description || post.excerpt} />
         <meta property="og:image" content={post.og_image || post.feature_image} />
         <meta name="twitter:card" content="summary_large_image" />
