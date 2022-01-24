@@ -125,7 +125,7 @@ export async function getStaticProps({ params: { slug } }) {
     const page = (slug.length > 1) ? slug[1] : 1;
     posts = await getPosts({ include: "tags", filter: `tag:${slug[0]}`, page });
     tags = await getTags();
-    category = posts[0].primary_tag;
+    category = tags.find(tag => tag.slug === slug[0]);
     meta = posts.meta;
   } catch (e) {
     return { notFound: true };
