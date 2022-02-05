@@ -82,6 +82,10 @@
       font-size: inherit;
       font-family: inherit;
       padding-right: 0.8rem;
+
+      &::placeholder {
+        color: rgba(255,255,255,0.5);
+      }
     }
 
     button {
