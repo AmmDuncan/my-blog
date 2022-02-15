@@ -12,8 +12,12 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 3.2rem;
+  padding: 0 2.4rem;
   box-shadow: 0 1rem 3.2rem rgba($color-grey-600, .05);
+
+  @media (min-width: 768px) {
+    padding: 0 3.2rem;
+  }
 
   .nav-brand {
     display: grid;
