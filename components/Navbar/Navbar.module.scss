@@ -22,8 +22,8 @@
   .nav-brand {
     display: grid;
     align-items: end;
-    grid-template-columns: repeat(2, max-content);
     column-gap: 0.4rem;
+    grid-template-columns: repeat(2, max-content);
   }
 
   .group-right {
