@@ -73,7 +73,7 @@ const Navbar = () => {
           </li>
           {/*<li><Link href="#">Categories</Link></li>*/}
           <li>
-            <Link href="https://ammielyawson.com/projects.html">Portfolio</Link>
+            <Link href="https://ammielyawson.com/">Portfolio</Link>
           </li>
         </ul>
 
