@@ -1,4 +1,4 @@
-@import 'styles/abstracts/variables';
+@import "styles/abstracts/variables";
 
 .footer {
   background-image: linear-gradient(30deg, $color-primary-600, $color-primary-400);
@@ -14,9 +14,9 @@
 
   .nav-brand {
     display: grid;
-    align-items: end;
+    align-items: center;
     grid-template-columns: repeat(2, max-content);
-    column-gap: 0.4rem;
+    column-gap: 0.8rem;
     color: white;
     margin-top: 2.4rem;
     margin-bottom: 6.4rem;
@@ -24,7 +24,6 @@
   }
 
   .secondary {
-
     @media (min-width: 600px) {
       border-top: none;
       border-left: 1px solid rgba($color-primary-100, 0.4);
