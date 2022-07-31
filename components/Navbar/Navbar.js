@@ -20,16 +20,25 @@ const Navbar = () => {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState(null);
-  const searchRef = createRef()
+  const searchRef = createRef();
 
   useEffect(() => {
     setLoading(true);
     if (search) {
       let allPosts = postsContext;
-      setPosts(allPosts ? allPosts.filter(pp => searchIn(pp, "title", search)
-        || searchIn(pp, "html", search)
-        || searchIn(pp, "excerpt", search)
-        || searchIn(pp, "tags", search)).slice(0, 4) : null);
+      setPosts(
+        allPosts
+          ? allPosts
+              .filter(
+                (pp) =>
+                  searchIn(pp, "title", search) ||
+                  searchIn(pp, "html", search) ||
+                  searchIn(pp, "excerpt", search) ||
+                  searchIn(pp, "tags", search)
+              )
+              .slice(0, 4)
+          : null
+      );
       window.p = allPosts;
     }
     setLoading(false);
@@ -41,14 +50,17 @@ const Navbar = () => {
         <Link href="/" passHref={true}>
           <Logo />
         </Link>
-        <Link href="/">
-          mmiel Yawson
-        </Link>
-
+        <Link href="/">Ammiel Yawson</Link>
       </div>
 
       <div className={styles["nav-open-btn"]} onClick={() => setOpen(true)}>
-        <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="28"
+          height="22"
+          viewBox="0 0 28 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <rect width="20" height="2" rx="1" fill="#DAD0F2" />
           <rect y="10" width="28" height="2" rx="1" fill="#DAD0F2" />
           <rect y="20" width="28" height="2" rx="1" fill="#DAD0F2" />
@@ -56,32 +68,40 @@ const Navbar = () => {
       </div>
       <div className={styles["group-right"]}>
         <ul>
-          <li><Link href="/">Browse</Link></li>
+          <li>
+            <Link href="/">Browse</Link>
+          </li>
           {/*<li><Link href="#">Categories</Link></li>*/}
-          <li><Link href="https://ammielyawson.com/projects.html">Portfolio</Link></li>
+          <li>
+            <Link href="https://ammielyawson.com/projects.html">Portfolio</Link>
+          </li>
         </ul>
 
         {/* SEARCH */}
         <div className={styles.search}>
-          <input type="text" placeholder="What are you interested in?" value={search} ref={searchRef}
-                 onChange={(e) => setSearch(e.target.value)} onSubmit={() => {
-            router.push(`posts?search=${search}`, { shallow: true });
-            setSearch("");
-          }} />
-          <button aria-label="Search Button"
+          <input
+            type="text"
+            placeholder="What are you interested in?"
+            value={search}
+            ref={searchRef}
+            onChange={(e) => setSearch(e.target.value)}
+            onSubmit={() => {
+              router.push(`posts?search=${search}`, { shallow: true });
+              setSearch("");
+            }}
+          />
+          <button
+            aria-label="Search Button"
             onClick={() => {
               if (search) {
                 setSearch("");
               } else {
                 searchRef.current.focus();
               }
-            }}>
-            {!search ? <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={16}
-                height={16}
-                viewBox="0 0 226 226"
-              >
+            }}
+          >
+            {!search ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 226 226">
                 <g
                   fill="none"
                   strokeMiterlimit={10}
@@ -90,7 +110,7 @@ const Navbar = () => {
                   fontSize="none"
                   textAnchor="none"
                   style={{
-                    mixBlendMode: "normal"
+                    mixBlendMode: "normal",
                   }}
                 >
                   <path d="M0 226V0h226v226z" />
@@ -102,13 +122,9 @@ const Navbar = () => {
                 <g>
                   <rect x={0} y={0} height={70} width={2} stroke="white" />
                 </g>
-              </svg> :
-              <svg
-                width={10}
-                height={10}
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              </svg>
+            ) : (
+              <svg width={10} height={10} fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -116,45 +132,67 @@ const Navbar = () => {
                   fill="#fff"
                 />
               </svg>
-            }
+            )}
 
             {/*Search*/}
           </button>
-          {(search && posts) && <ul className={styles["suggested"]}>
-            {
-              loading ? <Loader /> : posts ? posts.map(p => <li key={p.title}
-                                                                onClick={() => {
-                                                                  router.push(`/posts/${p.slug}`);
-                                                                  setSearch("");
-                                                                }}>{p.title}</li>) : null
-            }
-          </ul>}
+          {search && posts && (
+            <ul className={styles["suggested"]}>
+              {loading ? (
+                <Loader />
+              ) : posts ? (
+                posts.map((p) => (
+                  <li
+                    key={p.title}
+                    onClick={() => {
+                      router.push(`/posts/${p.slug}`);
+                      setSearch("");
+                    }}
+                  >
+                    {p.title}
+                  </li>
+                ))
+              ) : null}
+            </ul>
+          )}
         </div>
       </div>
-      <div className={classnames(styles["overlay"], { [styles["show-overlay"]]: isOpen })}
-           onClick={() => setOpen(false)} />
+      <div
+        className={classnames(styles["overlay"], { [styles["show-overlay"]]: isOpen })}
+        onClick={() => setOpen(false)}
+      />
       <div className={classnames(styles["mobile-content"], { [styles["show"]]: isOpen })}>
         <div className={styles["close-btn"]} onClick={() => setOpen(false)}>
-          <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="16"
+            height="15"
+            viewBox="0 0 16 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <rect y="14" width="20" height="2" rx="1" transform="rotate(-45 0 14)" fill="#5222D0" />
-            <rect width="20" height="2" rx="1" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 16 14)"
-                  fill="#5222D0" />
+            <rect
+              width="20"
+              height="2"
+              rx="1"
+              transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 16 14)"
+              fill="#5222D0"
+            />
           </svg>
         </div>
         <div className={styles.search}>
-          <input type="text" placeholder="What are you interested in?" alue={search}
-                 onChange={(e) => setSearch(e.target.value)} onSubmit={() => {
-            router.push(`posts?search=${search}`, { shallow: true });
-            setSearch("");
-          }} />
+          <input
+            type="text"
+            placeholder="What are you interested in?"
+            alue={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onSubmit={() => {
+              router.push(`posts?search=${search}`, { shallow: true });
+              setSearch("");
+            }}
+          />
           <button aria-label="Search Button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={16}
-              height={16}
-              viewBox="0 0 226 226"
-
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 226 226">
               <g
                 fill="none"
                 strokeMiterlimit={10}
@@ -163,7 +201,7 @@ const Navbar = () => {
                 fontSize="none"
                 textAnchor="none"
                 style={{
-                  mixBlendMode: "normal"
+                  mixBlendMode: "normal",
                 }}
               >
                 <path d="M0 226V0h226v226z" />
@@ -174,28 +212,41 @@ const Navbar = () => {
               </g>
             </svg>
           </button>
-          {(search && posts) && <ul className={styles["suggested"]}>
-            {
-              loading ? <Loader /> : posts ? posts.map(p => <li key={p.title}
-                                                                onClick={() => {
-                                                                  router.push(`/posts/${p.slug}`);
-                                                                  setSearch("");
-                                                                }}>{p.title}</li>) : null
-            }
-          </ul>}
+          {search && posts && (
+            <ul className={styles["suggested"]}>
+              {loading ? (
+                <Loader />
+              ) : posts ? (
+                posts.map((p) => (
+                  <li
+                    key={p.title}
+                    onClick={() => {
+                      router.push(`/posts/${p.slug}`);
+                      setSearch("");
+                    }}
+                  >
+                    {p.title}
+                  </li>
+                ))
+              ) : null}
+            </ul>
+          )}
         </div>
         <ul onClick={() => setTimeout(() => setOpen(false), 200)}>
-          <li><Link href="/">Browse</Link></li>
+          <li>
+            <Link href="/">Browse</Link>
+          </li>
           {/*<li><Link href="#">Categories</Link></li>*/}
-          <li><Link href="https://ammielyawson.com/projects.html">Portfolio</Link></li>
+          <li>
+            <Link href="https://ammielyawson.com/projects.html">Portfolio</Link>
+          </li>
         </ul>
         <div className={styles.image}>
           <Image layout="fill" src="/assets/images/mounts.png" alt="" />
         </div>
       </div>
     </nav>
-  )
-    ;
+  );
 };
 
 export default Navbar;
