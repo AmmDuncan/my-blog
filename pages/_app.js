@@ -76,11 +76,11 @@ class MyApp extends App {
           <link rel="manifest" href="/site.webmanifest" />
         </Head>
         <Script
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         />
 
-        <Script strategy="lazyOnload" id="analytics-script">
+        <Script strategy="afterInteractive" id="analytics-script">
           {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
