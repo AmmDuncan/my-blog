@@ -9,6 +9,7 @@ import App from "next/app";
 import Router from "next/router";
 import Image from "next/image";
 import Head from "next/head";
+import Script from "next/script";
 import Navbar from "../components/Navbar/Navbar";
 import Loader from "../components/Loader/Loader";
 import Footer from "../components/Footer/Footer";
@@ -18,7 +19,7 @@ export const AllPosts = createContext([]);
 class MyApp extends App {
   state = {
     loading: false,
-    posts: []
+    posts: [],
   };
 
   constructor(props) {
@@ -33,52 +34,71 @@ class MyApp extends App {
 
   componentDidMount() {
     fetch("/api/posts")
-      .then(res => res.json())
-      .then(
-        posts => this.setState({ posts })
-      );
+      .then((res) => res.json())
+      .then((posts) => this.setState({ posts }));
   }
 
   render() {
     const { Component, pageProps } = this.props;
     if (this.state.loading) {
       window.scrollTo(0, 0);
-      return <div>
-        <Navbar />
-        <div className="fill-page">
-          <div
-            style={{
-              display: "grid",
-              grid: "auto-flow max-content / 15rem",
-              placeContent: "center",
-              transform: "scale(0.7) translateX(-1.2rem)"
-            }}>
-            <Image width={80} height={150} src="/assets/images/soft-meme.gif" alt="" />
-            <Loader style={{
-              transform: "translateX(2rem) translateY(-1rem)"
-            }} />
+      return (
+        <div>
+          <Navbar />
+          <div className="fill-page">
+            <div
+              style={{
+                display: "grid",
+                grid: "auto-flow max-content / 15rem",
+                placeContent: "center",
+                transform: "scale(0.7) translateX(-1.2rem)",
+              }}
+            >
+              <Image width={80} height={150} src="/assets/images/soft-meme.gif" alt="" />
+              <Loader
+                style={{
+                  transform: "translateX(2rem) translateY(-1rem)",
+                }}
+              />
+            </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>;
+      );
     }
-    return <AllPosts.Provider value={this.state.posts}>
-      <Head>
-        <meta name="theme-color" content="#5222d0" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-      </Head>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
-    </AllPosts.Provider>;
+    return (
+      <AllPosts.Provider value={this.state.posts}>
+        <Head>
+          <meta name="theme-color" content="#5222d0" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="manifest" href="/site.webmanifest" />
+        </Head>
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+
+        <Script strategy="afterInteractive" id="analytics-script">
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+              });
+          `}
+        </Script>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </AllPosts.Provider>
+    );
   }
 }
 
 export default MyApp;
-
 
 /*import "../styles/main.scss";
 import "@fontsource/dm-serif-text/400.css";
