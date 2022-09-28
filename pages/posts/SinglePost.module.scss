@@ -181,7 +181,7 @@ main {
       font-weight: 350;
       @media (min-width: 768px) {
         font-weight: 300;
-        font-size: 1.9rem;
+        font-size: 1.8rem;
         line-height: 1.575;
         margin-bottom: 2.4rem;
       }
@@ -196,6 +196,13 @@ main {
         min-height: max(30rem, 30vw);
         max-height: 40rem;
       }
+    }
+
+    p > code {
+      background: #e2e2e2;
+      padding: 1px 4px;
+      border-radius: 4px;
+      font-size: 16px;
     }
 
     h2 {
@@ -220,7 +227,7 @@ main {
     }
 
     p {
-      color: $color-grey-600;
+      color: $color-grey-400;
     }
 
     a {
